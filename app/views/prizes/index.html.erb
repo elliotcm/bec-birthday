@@ -1,0 +1,21 @@
+<h2>Choose your gift!</h2>
+
+<% if Prize.chosen? %>
+  <p>You win $<%= Prize.chosen_prize.value %>!</p>
+<% else %>
+  <p>Pick a prize!  You can only win one of them, but you can change your mind at the next screen.</p>
+<% end %>
+
+<ul>
+  <% @prizes.each do |prize| %>
+    <li class="<%= prize.css_classes.join(" ") %>">
+      <%= link_to_unless Prize.chosen? || prize.revealed?, "$#{prize.stateful_value}", choose_or_reject_prize_path(prize) %>
+    </li>
+  <% end %>
+</ul>
+
+<% if Prize.chosen? && !Prize.revealed? %>
+  <%= button_to "Reveal all prizes", reveal_prizes_path %>
+
+  <p>Warning: sometimes it is better not to know what might have been.</p>
+<% end %>
