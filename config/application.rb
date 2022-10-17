@@ -35,5 +35,6 @@ module BecBirthday
     config.generators.system_tests = nil
 
     config.middleware.use Demopass::App
+    config.hosts << "bec-birthday.ngrok.io"
   end
 end
