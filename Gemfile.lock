@@ -75,6 +75,8 @@ GEM
     debug (1.6.2)
       irb (>= 1.3.6)
       reline (>= 0.3.1)
+    demopass (0.2.2)
+      rack
     erubi (1.11.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -176,6 +178,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (~> 1.13)
   debug (~> 1.6)
+  demopass (~> 0.2)
   importmap-rails (~> 1.1)
   pg (~> 1.4)
   puma (~> 6.0)
