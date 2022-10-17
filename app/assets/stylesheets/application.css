@@ -73,7 +73,7 @@ h1, h2, p, .box {
   margin: 0 auto;
 }
 
-.choices li button {
+.choices li button, .reveal-all button {
   background-color: #000;
   color: #eee;
   border: 2px solid #eee;
@@ -89,8 +89,14 @@ h1, h2, p, .box {
 }
 
 .prizes li.chosen span,
+.reveal-all button,
 .choices li.choose button {
   background-color: rgb(13, 176, 13);
+}
+
+.reveal-all button {
+  margin-bottom: 20px;
+  font-size: 2em;
 }
 
 .prizes li.rejected span,

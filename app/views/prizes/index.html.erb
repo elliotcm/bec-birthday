@@ -19,7 +19,7 @@
 </ul>
 
 <% if Prize.chosen? && !Prize.revealed? %>
-  <div class="box">
+  <div class="box reveal-all">
     <%= button_to "Reveal all prizes", reveal_prizes_path %>
 
     Warning: sometimes it is better not to know what might have been.
