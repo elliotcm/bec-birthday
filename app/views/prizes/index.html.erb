@@ -6,16 +6,22 @@
   <p>Pick a prize!  You can only win one of them, but you can change your mind at the next screen.</p>
 <% end %>
 
-<ul>
+<ul class="prizes">
   <% @prizes.each do |prize| %>
     <li class="<%= prize.css_classes.join(" ") %>">
-      <%= link_to_unless Prize.chosen? || prize.revealed?, "$#{prize.stateful_value}", choose_or_reject_prize_path(prize) %>
+      <% if Prize.chosen? || prize.revealed? %>
+        <span class="fake-link">$<%= prize.stateful_value %></span>
+      <% else %>
+        <%= link_to "$#{prize.stateful_value}", choose_or_reject_prize_path(prize) %>
+      <% end %>
     </li>
   <% end %>
 </ul>
 
 <% if Prize.chosen? && !Prize.revealed? %>
-  <%= button_to "Reveal all prizes", reveal_prizes_path %>
+  <div class="box">
+    <%= button_to "Reveal all prizes", reveal_prizes_path %>
 
-  <p>Warning: sometimes it is better not to know what might have been.</p>
+    Warning: sometimes it is better not to know what might have been.
+  </div>
 <% end %>

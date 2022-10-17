@@ -1,9 +1,17 @@
 <h2>Choose... or reject!?</h2>
 
+<ul class="prizes">
+  <li class="<%= @prize.css_classes.join(" ") %>">
+    <span class="fake-link">$<%= @prize.stateful_value %></span>
+  </li>
+</ul>
+
 <p>If you choose this mystery amount, congratulations!  You win whatever it is, but you're locked in and can't pick a different one.</p>
 <p>If you reject it, this prize is revealed and you can choose again, but it's lost to you forever.</p>
 
-<%= button_to "Choose", choose_prize_path(@prize) %>
-<%= button_to "Reject", reject_prize_path(@prize) %>
-or
+<ul class="choices">
+  <li class="choose"><%= button_to "Choose", choose_prize_path(@prize) %></li>
+  <li class="reject"><%= button_to "Reject", reject_prize_path(@prize) %></li>
+</ul>
+
 <p><%= link_to "Go back", prizes_path %></p>

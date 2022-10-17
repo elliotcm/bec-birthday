@@ -13,3 +13,91 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-image: url(https://s3.amazonaws.com/kudoboard-assets/templates/29342/backgrounds/lowres/K3ofOjzK.jpg);
+
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+h1, h2, p, .box {
+  background-color: rgba(255, 255, 255, .95);
+  padding: 20px 10px;
+  border-radius: 10px;
+
+  width: 300px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.prizes, .choices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  padding: 0;
+  list-style: none;
+}
+
+.prizes li {
+  flex-basis: 20%;
+
+  font-size: 2em;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.prizes li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.prizes li a:hover {
+  background-color: #ddd;
+}
+
+.prizes li a,
+.prizes li .fake-link {
+  border-radius: 10px;
+  background-color: white;
+
+  height: 90%;
+  width: 90%;
+  display: inline-block;
+
+  line-height: 3em;
+}
+
+.choices {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.choices li button {
+  background-color: #000;
+  color: #eee;
+  border: 2px solid #eee;
+  border-radius: 10px;
+
+  padding: 10px 20px;
+  font-size: 4em;
+}
+
+.choices li button:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.prizes li.chosen span,
+.choices li.choose button {
+  background-color: rgb(13, 176, 13);
+}
+
+.prizes li.rejected span,
+.choices li.reject button {
+  background-color: rgb(183, 16, 16);
+}
+
+.prizes li.rejected span, .prizes li.chosen span {
+  color: #fff;
+}
